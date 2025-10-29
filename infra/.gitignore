@@ -1,0 +1,32 @@
+.idea
+.terraform
+
+# 실무에서는 아래 파일들이 같이 관리되어야 한다.
+# 강사는 해당 리포지터리를 public 으로 하려고
+# 아래 파일과 같이 민감한 정보가 담기는 파일을 .gitignore 에 추가한다.
+.terraform.lock.hcl
+
+# 아래 두 개에는 테라폼 히스토리에 대한 내용이 들어있음.
+# 따라서 git에 올라가서 관리가 되어야 함. 하지만 민감한 정보가 들어있을 수 있음
+# 아래 파일들이 없으면, 다른 컴에서 작업을 다운받았을 때 이어서 aws 작업 불가능
+terraform.tfstate
+terraform.tfstate.backup
+
+# 로컬 Terraform 디렉토리
+**/.terraform/*
+
+# 충돌 로그 파일
+crash.log
+crash.*.log
+
+# Terraform 재정의 파일
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Terraform CLI 설정 파일
+.terraformrc
+terraform.rc
+
+secrets.tf
