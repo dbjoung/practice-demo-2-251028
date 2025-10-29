@@ -13,7 +13,6 @@ env:
 on:
   push:
     paths:
-      - ""
       - "backend/.env"
       - "backend/src/**"
       - "backend/build.gradle.kts"
