@@ -30,18 +30,3 @@ COPY --from=builder /app/.env .env
 
 # 실행할 JAR 파일 지정
 ENTRYPOINT ["java", "-Dspring.profiles.active=prod", "-jar", "app.jar"]
-
-$$hide
-# 5강
-- [25 10 29, p 14566, 6강, CI/CD 없이 수동으로 운영서버에서 빌드]()
-
-## 작업 1
-```bash
-# 운영서버 접속 후 `sudo su`
-dnf install -y git
-mkdir -p ~/temp/source
-cd ~/temp/source
-git clone https://github.com/sik2/p-14566-1 .
-cd backend
-docker build -t p-14566-1:v0.0.1 .
-docker images # 확인
